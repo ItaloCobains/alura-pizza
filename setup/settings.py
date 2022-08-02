@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-ga-b-nn+qz+*f_4srd+95**hgvs+)26)pu$#*@pv^4wl+0v3sc
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost']
 
 
 # Application definition
@@ -127,7 +127,8 @@ MEDIA_URL = '/media/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-if 'DATABASE_URL' in os.environ: import dj_database_url
+if 'DATABASE_URL' in os.environ:
+    import dj_database_url
     DATABASES = {
         'default': dj_database_url.config()
     }
